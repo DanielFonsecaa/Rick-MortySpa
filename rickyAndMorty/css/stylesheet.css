@@ -1,0 +1,75 @@
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+}
+
+#anchors {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 100%;
+}
+
+#home-href,
+#character-href,
+#episode-href,
+#location-href {
+    color: rgb(226, 226, 226);
+}
+#home-href:hover,
+#character-href:hover,
+#episode-href:hover,
+#location-href:hover {
+    transform: scale(1.15);
+    color: white;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: end;
+}
+
+.collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container {
+    margin: 2%;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.card:hover {
+    transform: scale(1.02);
+
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.card-body:hover {
+    background-color: rgb(66, 66, 66);
+}
+
+.text-center {
+    display: flex;
+    margin: 2%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav-item{
+    color: black
+}
+#searchButton:active{
+    background-color: rgb(198, 247, 198);
+}
