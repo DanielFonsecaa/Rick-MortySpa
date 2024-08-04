@@ -19,5 +19,8 @@ async function getLocations() {
 function incrementIndex(){
     index++;
 }
+function decrementIndex(){
+    index--;
+}
 
-export default { getLocation, getLocations,incrementIndex };
+export default { getLocation, getLocations,incrementIndex,decrementIndex };

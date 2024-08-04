@@ -18,5 +18,9 @@ export default {
     location: {
         path: '/location',
         controller: 'locationController'
+    },
+    singleLocation: {
+        path: `/location/1`,
+        controller: 'singleLocationController' 
     }
 };

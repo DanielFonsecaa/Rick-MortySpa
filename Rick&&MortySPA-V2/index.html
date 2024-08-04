@@ -18,39 +18,15 @@
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" id="anchors">
         <a class="navbar-brand" href="/" id="home-href">Home</a>
 
-        <button id="myButton" class="navbar-toggler" type="button" data-toggle="button"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
-            aria-label="Toggle navigation" onclick="myFunction()">
+        <button id="toggleButton" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="myDIV" style="color: white">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/character" id="character-href">Character</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/episode" id="episode-href">Episodes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/location" id="location-href">Location</a>
-                </li>
-            </ul>
-        
-        </div>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myDIV");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
 
-        </script>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto" id="anchorsToToggle">
                 <li class="nav-item">
                     <a class="nav-link" href="/character" id="character-href">Character</a>
                 </li>
@@ -63,9 +39,10 @@
             </ul>
 
             <form id="form" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Dont write on me" aria-label="Search">
+                <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Dont write on me" aria-label="Search">
                 <br>
-                <button id="searchButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Daniel_Is_Handsome</button>
+                <button id="searchButton" class="btn btn-outline-success my-2 my-sm-0"
+                    type="submit">Daniel_Is_Handsome</button>
             </form>
         </div>
     </nav>

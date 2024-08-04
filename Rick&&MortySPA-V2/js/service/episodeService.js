@@ -12,8 +12,14 @@ async function fetchData() {
 }
 
 async function getEpisode(index) {
-  const character = await fetchData();
+  try{
+     const character = await fetchData();
   return character.results[index];
+  }catch{
+    console.error("error fetching episode", error);
+    throw error;
+  }
+ 
 }
 
 async function getEpisodes() {

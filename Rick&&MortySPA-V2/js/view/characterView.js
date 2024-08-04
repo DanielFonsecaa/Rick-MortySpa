@@ -9,7 +9,7 @@ function render(character, onClick) {
     character.forEach(({ name, status, species, type, gender, origin, location, image, id }) => {
         const item = document.createElement('div');
         item.style.fontSize = "x-small";
-        item.innerHTML = `<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+        item.innerHTML = `<div class="card text-white bg-dark mb-3" style="width: 18rem;border: 2px solid black;">
         <img class="card-img-top" src="${image}" alt="CharacterImg" style="width:100%;" >
             <div class="card-body">
                 <h5 class="card-title">${name}</h5>

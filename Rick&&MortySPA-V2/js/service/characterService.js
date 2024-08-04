@@ -1,4 +1,8 @@
 let index = 1;
+let characterArray = [];
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+
 async function fetchData() {
 
     const api = `https://rickandmortyapi.com/api/character?page=${index}`;
@@ -7,7 +11,8 @@ async function fetchData() {
     if (!response.ok || body.Response === "False") {
         throw new Error(body.Error);
     }
-
+    characterArray = body.results;
+    console.log(characterArray[3].name);
     return { results: body.results, next: body.info.next };
 }
 
@@ -23,4 +28,12 @@ async function getCharacters() {
 function incrementIndex() {
     index++;
 }
+
+searchButton.addEventListener('click', () => {
+    const searchQuery = searchInput.value.toLowerCase();
+    const filteredCharacters = characters.filter(character => {
+      return character[1].name.toLowerCase().includes(searchQuery); 
+  
+    });
+});
 export default { getCharacter, getCharacters, incrementIndex };

@@ -9,7 +9,7 @@ function render(location, onClick) {
     location.forEach(({ name, type, dimension, id }) => {
         const item = document.createElement('div');
         item.style.fontSize = "x-small";
-        item.innerHTML = `<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+        item.innerHTML = `<div class="card text-white bg-dark mb-3" style="width: 18rem;border: 2px solid black;">
                             <div class="card-body">
                                 <h5 class="card-title">${name}</h5>
                                 <p class="card-text">

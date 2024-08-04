@@ -1,3 +1,6 @@
+body {
+    background-image: url("/rsc/rick-morty-background.png");
+  }
 a {
     text-decoration: none;
     color: inherit;
@@ -11,13 +14,17 @@ a {
     padding-right: 2%;
     height: 100%;
 }
-
+#randomCharButton{
+    display: block;
+    margin: 0 auto;
+}
 #home-href,
 #character-href,
 #episode-href,
 #location-href {
     color: rgb(226, 226, 226);
 }
+
 #home-href:hover,
 #character-href:hover,
 #episode-href:hover,
@@ -67,9 +74,21 @@ a {
     justify-content: space-between;
 }
 
-.nav-item{
+.nav-item {
     color: black
 }
-#searchButton:active{
+
+#searchButton:active {
     background-color: rgb(198, 247, 198);
+}
+
+#anchorsToToggle {
+    text-align: end;
+    margin-right: 20%;
+}
+
+@media (max-width: 900px) {
+    .mobileAnchors, #form {
+        display: none;
+    }
 }
