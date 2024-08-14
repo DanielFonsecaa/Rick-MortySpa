@@ -14,8 +14,7 @@ An incredible SPA inspired by Rick and Morty.
 </div>
 
 ## About The Project
-
-![Product Screenshot](https://picsum.photos/1920/1080)
+![Captura de ecrã 2024-08-14 101510](https://github.com/user-attachments/assets/ec1c8e54-e264-4a86-88c2-0870e2f09c92)
 
 My SPA is themed around Rick and Morty, showcasing all the characters, episodes, and locations from the show.
 
