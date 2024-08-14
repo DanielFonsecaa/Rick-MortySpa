@@ -37,8 +37,6 @@ I built this single-page application during the 13th week of the bootcamp, at a 
 - [ ] Implement pagination buttons to navigate forward and backward
 - [ ] Display each episode in which a character appears
 - [ ] Improve the front-end design
-
-See the [open issues](https://github.com/ShaanCoding/ReadME-Generator/issues) for a full list of proposed features (and known issues).
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
