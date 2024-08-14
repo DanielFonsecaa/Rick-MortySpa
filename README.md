@@ -16,6 +16,8 @@ An incredible SPA inspired by Rick and Morty.
 ## About The Project
 ![Captura de ecrã 2024-08-14 101510](https://github.com/user-attachments/assets/ec1c8e54-e264-4a86-88c2-0870e2f09c92)
 
+![Captura de ecrã 2024-08-14 101540](https://github.com/user-attachments/assets/a478f886-f448-4353-acc8-94701f8233bf)
+
 My SPA is themed around Rick and Morty, showcasing all the characters, episodes, and locations from the show.
 
 I built this single-page application during the 13th week of the bootcamp, at a time when we had only been learning JavaScript, CSS, and HTML for less than a week.
