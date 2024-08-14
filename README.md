@@ -1,7 +1,7 @@
-
 <br/>
 <div align="center">
-
+<img src="![rick-and-morty-portal](https://github.com/user-attachments/assets/41280dd4-8ba9-4602-a5db-e22d829deccb)
+" alt="Logo" width="80" height="80">
 <h3 align="center">Rick && Morty SPA</h3>
 <p align="center">
 An incredible SPA inspired by Rick and Morty.
