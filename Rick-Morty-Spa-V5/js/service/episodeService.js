@@ -1,4 +1,4 @@
-let index = 1;
+export let index = 1;
 async function fetchData() {
   
   const api = `https://rickandmortyapi.com/api/episode?page=${index}`;
@@ -11,10 +11,11 @@ async function fetchData() {
   return { results: body.results, next: body.info.next };
 }
 
-async function getEpisode(index) {
+async function getEpisode(id) {
   try{
-     const character = await fetchData();
-  return character.results[index];
+     const episode = await fetchData();
+     const number = subtractForIndex(id);
+  return episode.results[number];
   }catch{
     console.error("error fetching episode", error);
     throw error;
@@ -29,4 +30,14 @@ async function getEpisodes() {
 function incrementIndex() {
   index++;
 };
-export default { getEpisode, getEpisodes, incrementIndex };
+function decrementIndex() {
+  index--;
+};
+function subtractForIndex(number) {
+  if (index === 1) {
+      return number;
+  }
+  let subtractionValue = 20 * (index - 1);
+  return number - subtractionValue;
+}
+export default { getEpisode, getEpisodes, incrementIndex, decrementIndex };

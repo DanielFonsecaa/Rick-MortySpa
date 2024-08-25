@@ -1,4 +1,4 @@
-let index = 1;
+export let index = 1;
 async function fetchData() {
     const api = `https://rickandmortyapi.com/api/location?page=${index}`;
     const response = await fetch(api);
@@ -8,10 +8,11 @@ async function fetchData() {
     }
     return {results: body.results, next: body.info.next};
 }
-async function getLocation(index) {
+async function getLocation(id) {
     try{
         const location = await fetchData();
-        return location.results[index];
+        const number = subtractForIndex(id);
+        return location.results[number];
     }catch{
       console.error("error fetching location", error);
       throw error;
@@ -29,5 +30,11 @@ function incrementIndex(){
 function decrementIndex(){
     index--;
 }
-
+function subtractForIndex(number) {
+    if (index === 1) {
+        return number;
+    }
+    let subtractionValue = 20 * (index - 1);
+    return number - subtractionValue;
+}
 export default { getLocation, getLocations,incrementIndex,decrementIndex };

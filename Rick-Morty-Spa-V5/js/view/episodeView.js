@@ -1,9 +1,11 @@
 import router from '../router.js';
 import routes from '../routes.js';
+import episodeService from '../service/episodeService.js';
+import { index } from "../service/episodeService.js";
 
 export let singleId = 0;
 
-function render(episodes, onClick) {
+function render(episodes, next) {
 
     const container = document.querySelector('#container');
     container.innerHTML = '<br>'; //removes the previous elements
@@ -30,14 +32,71 @@ function render(episodes, onClick) {
         list.appendChild(item);
     });
     container.appendChild(list);
-    const buttonDiv = document.createElement('div');
-    buttonDiv.style = "display: flex; width: 100%; justify-content: center;";
-    const button = document.createElement('button');
-    button.className = "btn btn-danger";
-    button.innerHTML = "Load More";
-    buttonDiv.appendChild(button);
-    container.appendChild(buttonDiv);
-    button.onclick = onClick;
+
+    const pagination = document.createElement('div');
+
+    const navPag = document.createElement('nav');
+    navPag.ariaLabel = "Page navigation example"
+    const ul = document.createElement('ul');
+    ul.className = "pagination justify-content-center"
+    const liPrev = document.createElement('li');
+    liPrev.className = "page-item"
+    const liActual = document.createElement('li');
+    liActual.className = "page-item"
+    const liNext = document.createElement('li');
+    liNext.className = "page-item"
+
+    const prevBtn = document.createElement('button')
+    prevBtn.className = "previous-page page-link disabled"
+    if(index > 1) prevBtn.className = "previous-page page-link"
+    prevBtn.innerHTML = "Previous"
+    prevBtn.addEventListener('click', async () => {
+        episodeService.decrementIndex();
+        const { results: response, next } = await episodeService.getEpisodes();
+        render(response, next);
+    });
+
+    const actualBtn = document.createElement('button')
+    actualBtn.className = "actual-page page-link"
+    actualBtn.innerHTML = `${index}`
+
+    const nextBtn = document.createElement('button')
+    nextBtn.className = "next-page page-link disabled"
+    if (next) {
+        nextBtn.className = "next-page page-link"
+    }
+
+    nextBtn.innerHTML = "Next"
+    nextBtn.addEventListener('click', async () => {
+
+        if (nextBtn.disabled || liNext.classList.contains('disabled')) {
+            console.log("The button is disabled, doing nothing.");
+            return;
+        }
+        episodeService.incrementIndex();
+        const { results: response, next } = await episodeService.getEpisodes();
+
+        render(response, next);
+
+        if (!next) {
+            console.log("No more pages, disabling the button.");
+            nextBtn.disabled = true;
+            liNext.classList.add('disabled');
+        }
+    });
+
+    liPrev.appendChild(prevBtn);
+    liActual.appendChild(actualBtn);
+    liNext.appendChild(nextBtn);
+
+    ul.appendChild(liPrev)
+    ul.appendChild(liActual)
+    ul.appendChild(liNext)
+
+    navPag.appendChild(ul)
+    pagination.appendChild(navPag)
+
+    container.appendChild(pagination);
     
     
     
