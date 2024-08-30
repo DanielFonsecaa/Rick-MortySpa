@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-## Rick and morty SPA
-=======
 <br/>
 <div align="center">
 <img src="https://github.com/user-attachments/assets/e5b2c255-41f0-42cb-b1f9-7db4a6280bea" width="80" height="80">
@@ -53,4 +50,3 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
->>>>>>> ec7ed96281f64b2942f33008bec0936cd2bd6322
