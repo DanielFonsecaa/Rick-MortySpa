@@ -1,1 +1,0 @@
-## Rick and morty SPA
